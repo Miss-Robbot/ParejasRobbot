@@ -6,17 +6,19 @@ public class Tablero implements Tableable{
 	private boolean ganador;
 	
 	public Tablero(){
-		this.ganador=false;
+		this.setGanador(false);
 	}
 	public Tablero(Carta[] cartas, boolean ganador) {
 		super();
 		this.cartas = cartas;
-		this.ganador = ganador;
+		this.setGanador(ganador);
 	}
 
 	@Override
 	public void crearTablero(Dificultades dificultad) {
-		// TODO Auto-generated method stub
+		for (int i = 0; i < dificultad.getFilas()+dificultad.getColumnas(); i++) {//Carta[] es solo un array
+			
+		}
 		
 	}
 
@@ -34,10 +36,17 @@ public class Tablero implements Tableable{
 
 	@Override
 	public boolean comprobarGanador() {
-		// TODO Auto-generated method stub
+				
 		return false;
+	}
+	
+	public boolean isGanador() {
+		return ganador;
+	}
+	
+	public void setGanador(boolean ganador) {
+		this.ganador = ganador;
 	}
 	
 	
 }
-

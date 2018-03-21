@@ -2,16 +2,25 @@ package codigo;
 
 public enum Dificultades {
 
-	FACIL(4),MEDIO(12),DIFICIL(16);
-	private int longitudTablero;
+	FACIL(2,3),MEDIO(3,4),DIFICIL(4,6);
+	
+	
+	public int getFilas() {
+		return filas;
+	}
 
-	private Dificultades(int longitudTablero)
+	public int getColumnas() {
+		return columnas;
+	}
+
+	private int filas,columnas;
+
+	private Dificultades(int filas, int columnas)
 	{
-		this.longitudTablero=longitudTablero;
+		this.filas=filas;
+		this.columnas=columnas;
 	}
-	public int getLongitudTablero() {
-		return longitudTablero;
-	}
+	
 	
 	
 	
