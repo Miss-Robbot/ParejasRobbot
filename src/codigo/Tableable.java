@@ -15,7 +15,7 @@ public interface Tableable {
 	 * @return
 	 */
 	public boolean seleccionarCarta(int posicion);
-	
+		//assert Carta!=null;
 	/**
 	 * Compara las dos cartas seleccionadas para ver si el número que tienen dentro es el mismo. Si son distintas, cambiarán
 	 * las cartas a modo oculto.
@@ -24,11 +24,10 @@ public interface Tableable {
 	 * @return
 	 */
 	public boolean compararCartas(int posUno, int posDos);
-	
+		//assert CartaUno!=null CartaDos!=null;
 	/**
 	 * Comprueba que no haya cartas ocultas en el tablero.
 	 * @return
 	 */
 	public boolean comprobarGanador();
-	
 }

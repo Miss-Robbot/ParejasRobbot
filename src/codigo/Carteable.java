@@ -6,6 +6,7 @@ public interface Carteable {
 	 * Cambia el estado de Oculto de carta. Si está oculto lo desvela y si está desvelado lo oculta.
 	 */
 	public void desvelarCarta();
+		//assert carta seleccionada!=null;
 	
 	/**
 	 * Cambia emparejada a true. Una vez que emparejada está a true no puede volver a ser false.
