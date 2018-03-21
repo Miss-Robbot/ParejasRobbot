@@ -33,6 +33,25 @@ public class TableroTest {
 		
 	}
 	
+	@Test
+	public void seleccionarCartaTest()
+	{
+		Tablero tablero= new Tablero();
+		assertTrue(tablero.seleccionarCarta(0));
+	}
 	
+	@Test
+	public void compararCartasTest(){
+		Tablero tablero= new Tablero();
+		assertTrue(tablero.compararCartas(0, 1));
+	}
+	
+	@Test
+	public void comprobarGanador(){
+		Tablero tablero= new Tablero();
+		assertFalse(tablero.comprobarGanador());
+		tablero.setGanador(true);
+		assertTrue(tablero.comprobarGanador());
+	}
 
 }

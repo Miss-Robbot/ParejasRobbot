@@ -37,6 +37,18 @@ public class Tablero implements Tableable{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	public Carta[] getCartas() {
+		return cartas;
+	}
+	public void setCartas(Carta[] cartas) {
+		this.cartas = cartas;
+	}
+	public boolean isGanador() {
+		return ganador;
+	}
+	public void setGanador(boolean ganador) {
+		this.ganador = ganador;
+	}
 	
 	
 }
