@@ -1,7 +1,9 @@
 package vista;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 
@@ -26,17 +28,17 @@ import javax.swing.JButton;
 
 public class ParejasUI extends JFrame {
 
-	protected JPanel contentPane;
-	protected Botonera botonera;
-	protected int altobotonera=100;
-	protected int anchobotonera=100;
-	static Dificultades dificultad;
-	protected JButton[][] botones = new JButton[3][4];
-	private JButton btnJugar;
+	private JPanel contentPane;
+	protected JPanel panelJuego;
+	protected JPanel panelSeleccion;
+	private int columnas=3;
+	private int filas=3;
+	protected JButton[][] botones = new JButton[filas][columnas];
+	private JLabel lblNewLabel;
 	private JMenuItem facil;
 	private JMenuItem medio;
 	private JMenuItem dificil;
-	
+	private JButton btnJugar;
 	
 
 	/**
@@ -44,28 +46,48 @@ public class ParejasUI extends JFrame {
 	 */
 	public ParejasUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(110, 110, 455, 310);
+		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		contentPane.setLayout(new CardLayout(0, 0));
 		
+		panelSeleccion = new JPanel();
+		contentPane.add(panelSeleccion, "name_403440373194313");
 		
-		JLabel lblSeleccioneLaDificultad = new JLabel("Seleccione la dificultad:");
-		lblSeleccioneLaDificultad.setFont(new Font("Arimo", Font.BOLD, 17));
-		lblSeleccioneLaDificultad.setBounds(51, 21, 219, 35);
-		//lblSeleccioneLaDificultad.setVisible(false);
-		contentPane.add(lblSeleccioneLaDificultad);
+		panelJuego = new JPanel();
+		panelJuego.setBounds(0, 0, 424, 251);
+		panelJuego.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+		panelJuego.setMaximumSize(new Dimension(120, 120));
+		panelJuego.setVisible(false);
+		panelSeleccion.setLayout(null);
+		panelJuego.setLayout(null);
+		panelSeleccion.add(panelJuego);
+		
+		JLabel lblEncuentraLasParejas = new JLabel("Encuentra las parejas");
+		lblEncuentraLasParejas.setBounds(66, 11, 296, 33);
+		lblEncuentraLasParejas.setFont(new Font("Stencil", Font.PLAIN, 22));
+		panelJuego.add(lblEncuentraLasParejas);
+		
+		JPanel botonera = new JPanel();
+		botonera.setBounds(10, 44, 404, 196);
+		panelJuego.add(botonera);
+		botonera.setLayout(new GridLayout(0, filas, 0, 0));
+		
+		lblNewLabel = new JLabel("Selecciona la  ");
+		lblNewLabel.setFont(new Font("Rockwell Extra Bold", Font.PLAIN, 23));
+		lblNewLabel.setBounds(41, 0, 352, 65);
+		panelSeleccion.add(lblNewLabel);
 		
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBackground(Color.BLACK);
-		menuBar.setBounds(260, 36, 84, 21);
+		menuBar.setBackground(Color.WHITE);
+		menuBar.setBounds(230, 20, 148, 30);
 		menuBar.setPreferredSize(new Dimension(15, 25));
-		//menuBar.setVisible(false);
-		contentPane.add(menuBar);
+		
+		panelSeleccion.add(menuBar);
 		
 		JMenu menu = new JMenu("Dificultad");
-		menu.setForeground(Color.WHITE);
+		menu.setFont(new Font("Rockwell Extra Bold", Font.PLAIN, 23));
 		menuBar.add(menu);
 		
 		facil = new JMenuItem("F\u00E1cil");
@@ -83,30 +105,20 @@ public class ParejasUI extends JFrame {
 		dificil.setBackground(Color.BLACK);
 		menu.add(dificil);
 		
-		btnJugar = new JButton("Jugar!!");
-		btnJugar.setFont(new Font("Sitka Text", Font.BOLD, 30));
-		btnJugar.setBackground(Color.MAGENTA);
-		btnJugar.setBounds(65, 97, 137, 117);
-		//btnJugar.setVisible(false);
-		contentPane.add(btnJugar);
+		btnJugar = new JButton("\u00A1Jugar!");
+		btnJugar.setBounds(12, 120, 398, 91);
+		btnJugar.setFont(new Font("Rockwell Extra Bold", Font.BOLD, 18));
+		panelSeleccion.add(btnJugar);
 		
-		 
-		for (int i = 0; i < botones.length; i++) { //que sea tablero.length...
-			for (int j = 0; j < botones.length; j++) {
+		for (int i = 0; i < filas; i++) {
+			for (int j = 0; j < columnas; j++) {
 				botones[i][j] = new JButton();
 				botones[i][j].setBackground(Color.getHSBColor(234, 243, 92));
+				botonera.add(botones[i][j]);
 				botones[i][j].setName(i+","+j);
-				contentPane.add(botones[i][j]);
-				
 				 
 			}
 		}
-       
-        
-        
-    
-		
-		
 	}
 }
 
