@@ -16,7 +16,7 @@ public class Tablero implements Tableable{
 
 	@Override
 	public void crearTablero(Dificultades dificultad) {
-		for (int i = 0; i < dificultad.getFilas()+dificultad.getColumnas(); i++) {//Carta[] es solo un array
+		for (int i = 0; i < dificultad.getTamaño(); i++) {//Carta[] es solo un array
 			
 		}
 		

@@ -2,23 +2,19 @@ package codigo;
 
 public enum Dificultades {
 
-	FACIL(2,3),MEDIO(3,4),DIFICIL(4,6);
+	FACIL(3),MEDIO(4),DIFICIL(5);
 	
 	
-	public int getFilas() {
-		return filas;
+	public int getTamaño() {
+		return tamaño;
 	}
 
-	public int getColumnas() {
-		return columnas;
-	}
+	private int tamaño;
 
-	private int filas,columnas;
-
-	private Dificultades(int filas, int columnas)
+	private Dificultades(int tamaño)
 	{
-		this.filas=filas;
-		this.columnas=columnas;
+		this.tamaño=tamaño;
+		
 	}
 	
 	

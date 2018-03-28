@@ -24,6 +24,7 @@ import javax.swing.JComboBox;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
 public class ParejasUI extends JFrame {
@@ -31,9 +32,8 @@ public class ParejasUI extends JFrame {
 	private JPanel contentPane;
 	protected JPanel panelJuego;
 	protected JPanel panelSeleccion;
-	private int columnas=3;
-	private int filas=3;
-	protected JButton[][] botones = new JButton[filas][columnas];
+	private int tamaño=5;
+	protected JButton[][] botones = new JButton[tamaño][tamaño];
 	protected JLabel lblNewLabel;
 	protected JMenuItem facil;
 	protected JMenuItem medio;
@@ -72,7 +72,7 @@ public class ParejasUI extends JFrame {
 		JPanel botonera = new JPanel();
 		botonera.setBounds(10, 44, 404, 196);
 		panelJuego.add(botonera);
-		botonera.setLayout(new GridLayout(0, filas, 0, 0));
+		botonera.setLayout(new GridLayout(0, tamaño, 0, 0));
 		
 		lblNewLabel = new JLabel("Selecciona la  ");
 		lblNewLabel.setFont(new Font("Rockwell Extra Bold", Font.PLAIN, 23));
@@ -87,32 +87,31 @@ public class ParejasUI extends JFrame {
 		panelSeleccion.add(menuBar);
 		
 		JMenu menu = new JMenu("Dificultad");
+		menu.setForeground(Color.getHSBColor(243, 34, 72));
 		menu.setFont(new Font("Rockwell Extra Bold", Font.PLAIN, 23));
 		menuBar.add(menu);
 		
 		facil = new JMenuItem("F\u00E1cil");
-		facil.setForeground(Color.YELLOW);
-		facil.setBackground(Color.BLACK);
+		facil.setBorder(BorderFactory.createLineBorder(Color.getHSBColor(243, 34, 72), 3, false));
 		menu.add(facil);
 		
 		medio = new JMenuItem("Medio");
-		medio.setForeground(Color.YELLOW);
-		medio.setBackground(Color.BLACK);
+		medio.setBorder(BorderFactory.createLineBorder(Color.BLACK, 4, false));
 		menu.add(medio);
 		
 		dificil = new JMenuItem("Dif\u00EDcil");
-		dificil.setForeground(Color.YELLOW);
-		dificil.setBackground(Color.BLACK);
+		dificil.setBorder(BorderFactory.createLineBorder(Color.getHSBColor(243, 34, 72), 3, false));
 		menu.add(dificil);
 		
 		btnJugar = new JButton("\u00A1Jugar!");
 		btnJugar.setBounds(12, 120, 398, 91);
 		btnJugar.setFont(new Font("Rockwell Extra Bold", Font.BOLD, 18));
-		btnJugar.setEnabled(false);
+		//btnJugar.setEnabled(false);
+		btnJugar.setBackground(Color.getHSBColor(243, 34, 72));
 		panelSeleccion.add(btnJugar);
 		
-		for (int i = 0; i < filas; i++) {
-			for (int j = 0; j < columnas; j++) {
+		for (int i = 0; i < tamaño; i++) {
+			for (int j = 0; j < tamaño; j++) {
 				botones[i][j] = new JButton();
 				botones[i][j].setBackground(Color.getHSBColor(234, 243, 92));
 				botonera.add(botones[i][j]);
