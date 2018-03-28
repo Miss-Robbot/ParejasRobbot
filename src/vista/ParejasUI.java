@@ -34,11 +34,11 @@ public class ParejasUI extends JFrame {
 	private int columnas=3;
 	private int filas=3;
 	protected JButton[][] botones = new JButton[filas][columnas];
-	private JLabel lblNewLabel;
-	private JMenuItem facil;
-	private JMenuItem medio;
-	private JMenuItem dificil;
-	private JButton btnJugar;
+	protected JLabel lblNewLabel;
+	protected JMenuItem facil;
+	protected JMenuItem medio;
+	protected JMenuItem dificil;
+	protected JButton btnJugar;
 	
 
 	/**

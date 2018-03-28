@@ -11,6 +11,16 @@ import codigo.Dificultades;
 
 public class ParaUI extends ParejasUI{
 
-	
+	public ParaUI(){
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
 
 }
