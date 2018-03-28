@@ -18,9 +18,16 @@ public class AccionDificultades implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		//crear tablero en modo facil
-		//setEnabled(true), no va..
 		
+		//setEnabled(true), no va..
+		if (((JMenuItem) arg0.getSource()).getName() == "facil") {
+			//crear tablero en modo facil
+			//podria funcionar un pseudoMain
+		}else if (((JMenuItem) arg0.getSource()).getName() == "medio") {
+			
+		}else{
+			
+		}
 		
 	}
 
