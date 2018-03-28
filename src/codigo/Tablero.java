@@ -1,8 +1,8 @@
 package codigo;
 
 public class Tablero implements Tableable{
-
-	private Carta [] cartas;
+	
+	private Carta[] cartas;
 	private boolean ganador;
 	
 	public Tablero(){
@@ -16,16 +16,21 @@ public class Tablero implements Tableable{
 
 	@Override
 	public void crearTablero(Dificultades dificultad) {
+		cartas = new Carta[dificultad.getTamaño()];
 		for (int i = 0; i < dificultad.getTamaño(); i++) {//Carta[] es solo un array
-			
+			cartas[i] = new Carta();
 		}
 		
 	}
 
 	@Override
 	public boolean seleccionarCarta(int posicion) {
-		// TODO Auto-generated method stub
-		return false;
+		if(cartas[posicion].isOculta()){//lo he puesto para que cuando se empareje tambien conste como que esta oculta
+			return true;
+		}else{
+			return false;
+		}
+		
 	}
 
 	@Override
@@ -36,8 +41,13 @@ public class Tablero implements Tableable{
 
 	@Override
 	public boolean comprobarGanador() {
-				
-		return false;
+		ganador=true;
+		for (int i = 0; i < cartas.length; i++) {
+			if(!cartas[i].isEmparejada()){
+				ganador=false;
+			}
+		}
+		return ganador;
 	}
 	
 	public boolean isGanador() {

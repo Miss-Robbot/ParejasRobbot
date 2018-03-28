@@ -2,37 +2,31 @@ package codigo;
 
 public class Carta implements Carteable{
 
-	private boolean oculta;
-	private boolean emparejada;
+	private boolean oculta=true;
+	private boolean emparejada=false;
 	
-	public Carta(boolean oculta, boolean emparejada) {
-		super();
-		this.oculta = oculta;
-		this.emparejada = emparejada;
-	}
 
 	@Override
 	public void desvelarCarta() {
-		// TODO Auto-generated method stub
+		oculta=false;
 		
 	}
 
 	@Override
 	public void setEmparejada() {
-		// TODO Auto-generated method stub
+		oculta=false;
+		emparejada=true;
 		
 	}
 
 	@Override
 	public boolean isEmparejada() {
-		// TODO Auto-generated method stub
-		return false;
+		return emparejada;
 	}
 
 	@Override
 	public boolean isOculta() {
-		// TODO Auto-generated method stub
-		return false;
+		return oculta;
 	}
 	
 	
