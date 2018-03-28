@@ -3,7 +3,7 @@ package acciones;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import vista.ParaUI;
+import control.ParaUI;
 
 public class AccionCartas implements ActionListener{
 	

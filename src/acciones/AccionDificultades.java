@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JMenuItem;
 
-import vista.ParaUI;
+import control.ParaUI;
 
 public class AccionDificultades implements ActionListener{
 	

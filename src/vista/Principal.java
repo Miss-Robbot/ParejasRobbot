@@ -2,6 +2,8 @@ package vista;
 
 import java.awt.EventQueue;
 
+import control.ParaUI;
+
 public class Principal {
 	
 	/**

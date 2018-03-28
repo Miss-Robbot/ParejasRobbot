@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JMenuItem;
 
-import vista.ParaUI;
+import control.ParaUI;
 
 public class AccionBoton implements ActionListener{
 	
