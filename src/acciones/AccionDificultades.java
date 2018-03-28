@@ -8,11 +8,11 @@ import javax.swing.JMenuItem;
 
 import vista.ParaUI;
 
-public class AccionFacil implements ActionListener{
+public class AccionDificultades implements ActionListener{
 	
 	private ParaUI paraUI;
 
-	public AccionFacil(ParaUI paraUI) {
+	public AccionDificultades(ParaUI paraUI) {
 		super();
 		this.paraUI = paraUI;
 	}
