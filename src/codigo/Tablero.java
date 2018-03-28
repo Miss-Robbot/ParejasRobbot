@@ -17,11 +17,13 @@ public class Tablero implements Tableable{
 	}
 	
 	private void desordenarNumeros(int[] numeros){ //voy en orden y les asigno una posicion aleatoria, intercambiandolos
-	
+		//no funciona
+		int meh=0;
 		for (int i = 0; i < numeros.length; i++) {
 			Random aleatorio = new Random(System.currentTimeMillis());
-			numeros[aleatorio.nextInt(numeros.length)]=numeros[i];
+			meh=numeros[i];
 			numeros[i]=numeros[aleatorio.nextInt(numeros.length)];
+			numeros[aleatorio.nextInt(numeros.length)]=meh;
 		}
 	}
 	
@@ -40,7 +42,7 @@ public class Tablero implements Tableable{
 		for (int i = 0; i < dificultad.getTamaño(); i++) {//Carta[] es solo un array
 			cartas[i] = new Carta();
 		}
-		
+		cortarSaco(dificultad);
 	}
 
 	@Override
