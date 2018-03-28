@@ -97,7 +97,7 @@ public class ParejasUI extends JFrame {
 		
 		medio = new JMenuItem("Medio");
 		medio.setBorder(BorderFactory.createLineBorder(Color.BLACK, 4, false));
-		menu.add(medio);
+		menu.add(medio); 
 		
 		dificil = new JMenuItem("Dif\u00EDcil");
 		dificil.setBorder(BorderFactory.createLineBorder(Color.getHSBColor(243, 34, 72), 3, false));
