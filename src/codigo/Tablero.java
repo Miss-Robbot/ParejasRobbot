@@ -1,9 +1,29 @@
 package codigo;
 
+import java.util.Random;
+
 public class Tablero implements Tableable{
 	
 	private Carta[] cartas;
 	private boolean ganador;
+	private int[] sacoDeNumeros={1,1,2,2,3,3,4,4,5,5}; //con esto intentare hacer el sorteo de los numeros
+	
+	private void cortarSaco(Dificultades dificultad){
+		int[] numeros = new int[dificultad.getTamaño()*2]; 
+		for (int i = 0; i < numeros.length; i++) {
+			numeros[i]=sacoDeNumeros[i];
+		}
+		desordenarNumeros(numeros);
+	}
+	
+	private void desordenarNumeros(int[] numeros){ //voy en orden y les asigno una posicion aleatoria, intercambiandolos
+	
+		for (int i = 0; i < numeros.length; i++) {
+			Random aleatorio = new Random(System.currentTimeMillis());
+			numeros[aleatorio.nextInt(numeros.length)]=numeros[i];
+			numeros[i]=numeros[aleatorio.nextInt(numeros.length)];
+		}
+	}
 	
 	public Tablero(){
 		this.setGanador(false);

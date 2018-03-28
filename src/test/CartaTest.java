@@ -10,7 +10,7 @@ public class CartaTest {
 
 	@Test
 	public void desvelarCartaTest() {
-		Carta carta = new Carta(true,true);
+		Carta carta = new Carta();
 		carta.desvelarCarta();
 		assertFalse(carta.isOculta());
 		carta.desvelarCarta();
@@ -19,7 +19,7 @@ public class CartaTest {
 	
 	@Test
 	public void setEmparejadaTest(){
-		Carta carta = new Carta(true,true);
+		Carta carta = new Carta();
 		carta.setEmparejada();
 		assertFalse(carta.isEmparejada());
 		carta.setEmparejada();
@@ -29,14 +29,14 @@ public class CartaTest {
 	@Test
 	public void isEmparejadaTest()
 	{
-		Carta carta = new Carta(true,true);
+		Carta carta = new Carta();
 		assertTrue(carta.isEmparejada());
 	}
 	
 	@Test
 	public void isOcultaTest()
 	{
-		Carta carta = new Carta(true,true);
+		Carta carta = new Carta();
 		assertTrue(carta.isOculta());
 	}
 
