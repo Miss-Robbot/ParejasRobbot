@@ -8,7 +8,7 @@ import javax.swing.JMenuItem;
 
 import control.ParaUI;
 
-public class AccionDificultades implements ActionListener{
+public class AccionDificultades extends ParaUI implements ActionListener{
 	
 	private ParaUI paraUI;
 
@@ -18,11 +18,12 @@ public class AccionDificultades implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		
+		btnJugar.setEnabled(true);
 		//setEnabled(true), no va..
 		if (((JMenuItem) arg0.getSource()).getName() == "facil") {
 			//crear tablero en modo facil
 			//podria funcionar un pseudoMain
+			
 		}else if (((JMenuItem) arg0.getSource()).getName() == "medio") {
 			
 		}else{

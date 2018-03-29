@@ -7,7 +7,7 @@ import javax.swing.JMenuItem;
 
 import control.ParaUI;
 
-public class AccionBoton implements ActionListener{
+public class AccionBoton extends ParaUI implements ActionListener {
 	
 	private ParaUI paraUI;
 
@@ -17,8 +17,9 @@ public class AccionBoton implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+		panelSeleccion.setVisible(false);
+		panelJuego.setVisible(true);
 		
-		//poner invisible el panelSeleccion y visibilizar el panelJuego
 		
 	}
 

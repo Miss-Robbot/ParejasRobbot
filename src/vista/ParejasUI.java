@@ -106,7 +106,7 @@ public class ParejasUI extends JFrame {
 		btnJugar = new JButton("\u00A1Jugar!");
 		btnJugar.setBounds(12, 120, 398, 91);
 		btnJugar.setFont(new Font("Rockwell Extra Bold", Font.BOLD, 18));
-		//btnJugar.setEnabled(false);
+		btnJugar.setEnabled(false);
 		btnJugar.setBackground(Color.getHSBColor(243, 34, 72));
 		panelSeleccion.add(btnJugar);
 		
