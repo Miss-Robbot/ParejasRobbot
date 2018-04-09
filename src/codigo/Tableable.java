@@ -14,7 +14,7 @@ public interface Tableable {
 	 * @param posicion
 	 * @return
 	 */
-	public boolean seleccionarCarta(int posicion);
+	public boolean seleccionarCarta(int posicionUno,int posicionDos);
 		//assert Carta!=null;
 	/**
 	 * Compara las dos cartas seleccionadas para ver si el número que tienen dentro es el mismo. Si son distintas, cambiarán
@@ -23,7 +23,7 @@ public interface Tableable {
 	 * @param posDos
 	 * @return
 	 */
-	public boolean compararCartas(int posUno, int posDos);
+	public boolean compararCartas(int posicionUnoCartaUno,int posicionDosCartaUno, int posicionUnoCartaDos, int posicionDosCartaDos);
 		//assert CartaUno!=null CartaDos!=null;
 	/**
 	 * Comprueba que no haya cartas ocultas en el tablero.

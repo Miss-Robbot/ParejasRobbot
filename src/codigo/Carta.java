@@ -4,35 +4,41 @@ public class Carta implements Carteable{
 
 	private boolean oculta;
 	private boolean emparejada;
+	private int numero;
 	
-	public Carta(boolean oculta, boolean emparejada) {
+	public Carta() {
 		super();
-		this.oculta = oculta;
-		this.emparejada = emparejada;
+		this.oculta = true;
+		this.emparejada = false;
+		this.numero=0;
 	}
 
 	@Override
 	public void desvelarCarta() {
-		// TODO Auto-generated method stub
-		
+		this.oculta=!oculta;
 	}
 
 	@Override
 	public void setEmparejada() {
-		// TODO Auto-generated method stub
-		
+		this.emparejada=!emparejada;
 	}
 
 	@Override
 	public boolean isEmparejada() {
-		// TODO Auto-generated method stub
-		return false;
+		return emparejada;
 	}
 
 	@Override
 	public boolean isOculta() {
-		// TODO Auto-generated method stub
-		return false;
+		return oculta;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
 	}
 	
 	
